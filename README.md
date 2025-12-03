@@ -1,6 +1,6 @@
 # Elysia cookie injection, prototype pollution, and RCE
 
-## Cookie config ACE: ./cookie-injection.ts
+## [CVE-2025-66457](https://github.com/elysiajs/elysia/security/advisories/GHSA-8vch-m3f4-q8jf) Cookie config ACE: ./cookie-injection.ts
 Arbitrary code execution from cookie config. If dynamic cookies are enabled
 (ie there exists a schema for cookies), the cookie config is injected into the compiled
 route.
@@ -35,7 +35,7 @@ const app = new Elysia({
 });
 ```
 
-## Prototype pollution in schema validation: ./proto-pollution.ts
+## [CVE-2025-66456](https://github.com/elysiajs/elysia/security/advisories/GHSA-hxj9-33pp-j2cc) Prototype pollution in schema validation: ./proto-pollution.ts
 Prototype pollution vulnerability in `mergeDeep` after merging results of two
 standard schema validations with the same key. Due to the ordering of merging,
 there must be an `any` type that is set as a `standalone` guard, to allow for the
